@@ -1,22 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Header from './components/Header';
-import Search from './components/Search';
-import Saved from './components/Saved';
-import Detail from './components/Detail';
-import NotFound from './components/NotFound';
+import SiteContainer from './components/SiteContainer';
+import Nav from './components/Nav';
+import Hero from './components/Hero';
+import Search from './pages/Search';
+import Saved from './pages/Saved';
+import NotFound from './pages/NotFound';
 
 const App = () => (
   <Router>
-    <div>
-      <Header />
+    <SiteContainer>
+      <Nav />
+      <Hero />
       <Switch>
         <Route exact path="/" component={Search} />
-        <Route exact path="/saved" component={Saved} />
-        <Route exact path="/saved/:id" component={Detail} />
+        <Route path="/saved" component={Saved} />
         <Route component={NotFound} />
       </Switch>
-    </div>
+    </SiteContainer>
   </Router>
 );
 

@@ -11,13 +11,13 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // return all saved books as JSON
-app.get('/api/books', (req, res) => console.log(res));
+app.get('/api/books', (req, res) => console.log(req, res));
 
 // save a new book to the database
-app.post('/api/books', (req, res) => console.log(res));
+app.post('/api/books', (req, res) => console.log(req, res));
 
 // delete a book from the database by Mongo _id
-app.delete('/api/books/:id', (req, res) => console.log(res));
+app.delete('/api/books/:id', (req, res) => console.log(req, res));
 
 app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, './client/build/index.html'))
