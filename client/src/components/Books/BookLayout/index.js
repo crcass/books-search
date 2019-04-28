@@ -6,9 +6,10 @@ const BookLayout = ({
   id,
   image,
   link,
+  title,
+  removeBook,
   saveBook,
-  save,
-  title
+  save
 }) => (
   <Fragment>
     <div>
@@ -19,7 +20,7 @@ const BookLayout = ({
       <a href={link} target="_blank" rel="noopener noreferrer">
         Visit
       </a>
-      <button data-id={id} onClick={saveBook}>
+      <button data-index={id} onClick={removeBook || saveBook}>
         {save ? 'Save' : 'Delete'}
       </button>
     </div>

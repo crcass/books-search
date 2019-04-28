@@ -1,7 +1,9 @@
 const express = require('express');
-const path = require('path');
-const PORT = process.env.PORT || 3001;
 const app = express();
+// const path = require('path');
+const mongoose = require('mongoose');
+const PORT = process.env.PORT || 3001;
+const routes = require('./routes');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -10,17 +12,13 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
 
-// return all saved books as JSON
-app.get('/api/books', (req, res) => console.log(req, res));
+app.use(routes);
 
-// save a new book to the database
-app.post('/api/books', (req, res) => console.log(req, res));
+const MONGODB_URI =
+  process.env.MONGODB_URI || 'mongodb://localhost/googlebooks';
 
-// delete a book from the database by Mongo _id
-app.delete('/api/books/:id', (req, res) => console.log(req, res));
-
-app.get('*', (req, res) =>
-  res.sendFile(path.join(__dirname, './client/build/index.html'))
-);
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true
+});
 
 app.listen(PORT, () => console.log(`🌎 ==> API server now on port ${PORT}!`));

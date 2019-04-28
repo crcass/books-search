@@ -2,9 +2,8 @@ import book from './book_1.png';
 
 const formatNames = arr => arr.join(', ').replace(/, ([^,]*)$/, ' & $1');
 
-export function formatResults(arr) {
-  return arr.map((item, i) => ({
-    id: i,
+export function formatAPIResults(arr) {
+  return arr.map(item => ({
     title: item.volumeInfo.title,
     authors: item.volumeInfo.authors
       ? formatNames(item.volumeInfo.authors)

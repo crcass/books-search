@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import Form from '../../components/Form';
 import Books from '../../components/Books';
-import { getBooks } from '../../api';
-import { formatResults } from '../../helpers';
+import { getBooks, postBook } from '../../api';
+import { formatAPIResults } from '../../helpers';
 
 class Search extends Component {
   constructor() {
@@ -19,8 +19,11 @@ class Search extends Component {
     e.preventDefault();
     const form = document.querySelector('form');
     const { term } = this.state;
-    this.setState({ term });
+    if (term === '') {
+      return alert('Please enter a book title');
+    }
     this.searchBooks(term);
+    this.setState({ term: '' });
     form.reset();
   };
 
@@ -28,7 +31,7 @@ class Search extends Component {
     try {
       const response = await getBooks(term);
       this.setState({
-        books: formatResults(response.data.items)
+        books: formatAPIResults(response.data.items)
       });
     } catch (error) {
       throw error;
@@ -36,10 +39,9 @@ class Search extends Component {
   }
 
   saveBook = e => {
-    const { id } = e.target.dataset;
+    const { index } = e.target.dataset;
     const { books } = this.state;
-    console.log(books[id]);
-    console.log(`Saving ${id} to database`);
+    postBook(books[index]);
   };
 
   render() {
