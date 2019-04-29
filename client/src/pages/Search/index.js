@@ -51,7 +51,7 @@ class Search extends Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
-        <Books books={this.state.books} saveBook={this.saveBook} save />
+        <Books books={this.state.books} handleBook={this.saveBook} save />
       </Fragment>
     );
   }

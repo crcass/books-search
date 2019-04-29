@@ -1,4 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import Section from './Section';
+import Flex from './Flex';
+import Title from './Title';
+import Buttons from './Buttons';
+import Details from './Details';
 
 const BookLayout = ({
   authors,
@@ -7,28 +12,18 @@ const BookLayout = ({
   image,
   link,
   title,
-  removeBook,
-  saveBook,
+  handleBook,
   save
 }) => (
-  <Fragment>
-    <div>
-      <h2>{title}</h2>
-      <h3>{authors}</h3>
-    </div>
-    <div>
-      <a href={link} target="_blank" rel="noopener noreferrer">
-        Visit
-      </a>
-      <button data-index={id} onClick={removeBook || saveBook}>
-        {save ? 'Save' : 'Delete'}
-      </button>
-    </div>
-    <div>
-      <img src={image} alt={title} />
-      <p>{description}</p>
-    </div>
-  </Fragment>
+  <Section>
+    <Flex>
+      <Title authors={authors} title={title} />
+      <Buttons id={id} link={link} handleBook={handleBook} save={save} />
+    </Flex>
+    {/* <img src={image} alt={title} />
+    <p>{description}</p> */}
+    <Details description={description} image={image} title={title} />
+  </Section>
 );
 
 export default BookLayout;

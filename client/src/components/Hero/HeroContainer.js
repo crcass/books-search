@@ -1,23 +1,16 @@
 import styled from 'styled-components';
 
 const HeroContainer = styled.div`
-  background: #eee;
+  align-items: center;
+  background: #e0e0e0;
   background-position: center;
   background-size: cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
   height: 20em;
+  justify-content: center;
   width: 100%;
-
-  section {
-    align-items: center;
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Poppins', Arial, Helvetica Neue, Helvetica, sans-serif;
-    height: 100%;
-    justify-content: center;
-    width: 100%;
-  }
 
   h1 {
     font-size: 1.75em;
@@ -26,9 +19,9 @@ const HeroContainer = styled.div`
     }
   }
 
-  p {
+  /* p {
     max-width: 80%;
-  }
+  } */
 `;
 
 export default HeroContainer;

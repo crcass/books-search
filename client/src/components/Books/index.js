@@ -2,7 +2,7 @@ import React from 'react';
 import BooksContainer from './BooksContainer';
 import BookLayout from './BookLayout';
 
-const renderBooks = (books, removeBook, saveBook, save) =>
+const renderBooks = (books, handleBook, save) =>
   books.map((book, i) => (
     <BookLayout
       key={i}
@@ -12,16 +12,13 @@ const renderBooks = (books, removeBook, saveBook, save) =>
       image={book.image}
       link={book.link}
       title={book.title}
-      removeBook={removeBook}
-      saveBook={saveBook}
+      handleBook={handleBook}
       save={save}
     />
   ));
 
-const Books = ({ books, removeBook, saveBook, save }) => (
-  <BooksContainer>
-    {renderBooks(books, removeBook, saveBook, save)}
-  </BooksContainer>
+const Books = ({ books, handleBook, save }) => (
+  <BooksContainer>{renderBooks(books, handleBook, save)}</BooksContainer>
 );
 
 export default Books;
