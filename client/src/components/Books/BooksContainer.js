@@ -7,6 +7,7 @@ const BooksContainer = styled.div`
   flex-direction: column;
   padding: 0 1em;
   margin: 1em auto;
+  max-width: 960px;
   overflow: scroll;
 `;
 
