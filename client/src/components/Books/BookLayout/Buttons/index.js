@@ -1,7 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ButtonContainer from './ButtonContainer';
 import Anchor from './Anchor';
 import Button from './Button';
+
+const propTypes = {
+  id: PropTypes.number,
+  link: PropTypes.string,
+  handleBook: PropTypes.func,
+  save: PropTypes.bool
+};
 
 const Buttons = ({ id, link, handleBook, save }) => (
   <ButtonContainer>
@@ -13,5 +21,7 @@ const Buttons = ({ id, link, handleBook, save }) => (
     </Button>
   </ButtonContainer>
 );
+
+Button.propTypes = propTypes;
 
 export default Buttons;

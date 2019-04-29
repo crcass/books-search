@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const BooksContainer = styled.div`
   background-color: #aaa;
-  border: 1px solid #eee;
   border-radius: 4px;
   display: flex;
   flex-direction: column;

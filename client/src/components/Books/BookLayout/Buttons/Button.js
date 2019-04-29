@@ -1,4 +1,9 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+
+const propTypes = {
+  save: PropTypes.bool
+};
 
 const Button = styled.button`
   align-items: center;
@@ -15,5 +20,7 @@ const Button = styled.button`
   text-decoration: none;
   width: 100px;
 `;
+
+Button.propTypes = propTypes;
 
 export default Button;

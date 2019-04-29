@@ -5,13 +5,10 @@ import { getBooks, postBook } from '../../api';
 import { formatAPIResults } from '../../helpers';
 
 class Search extends Component {
-  constructor() {
-    super();
-    this.state = {
-      term: '',
-      books: []
-    };
-  }
+  state = {
+    term: '',
+    books: []
+  };
 
   handleChange = e => this.setState({ term: e.target.value.toLowerCase() });
 
