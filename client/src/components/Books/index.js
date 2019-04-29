@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import BooksContainer from './BooksContainer';
 import BookLayout from './BookLayout';
 
@@ -11,21 +12,26 @@ const propTypes = {
 
 const renderBooks = (books, handleBook, save) =>
   books.map((book, i) => (
-    <BookLayout
-      key={i}
-      authors={book.authors}
-      description={book.description}
-      id={i}
-      image={book.image}
-      link={book.link}
-      title={book.title}
-      handleBook={handleBook}
-      save={save}
-    />
+    <CSSTransition key={i} timeout={200} classNames="move">
+      <BookLayout
+        authors={book.authors}
+        description={book.description}
+        id={i}
+        image={book.image}
+        link={book.link}
+        title={book.title}
+        handleBook={handleBook}
+        save={save}
+      />
+    </CSSTransition>
   ));
 
 const Books = ({ books, handleBook, save }) => (
-  <BooksContainer>{renderBooks(books, handleBook, save)}</BooksContainer>
+  <BooksContainer>
+    <TransitionGroup className="tGroup">
+      {renderBooks(books, handleBook, save)}
+    </TransitionGroup>
+  </BooksContainer>
 );
 
 Books.propTypes = propTypes;

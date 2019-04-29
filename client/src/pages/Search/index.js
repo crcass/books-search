@@ -14,14 +14,12 @@ class Search extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const form = document.querySelector('form');
     const { term } = this.state;
     if (term === '') {
       return alert('Please enter a book title');
     }
     this.searchBooks(term);
-    this.setState({ term: '' });
-    form.reset();
+    this.setState({ term: '', books: [] });
   };
 
   async searchBooks(term) {
@@ -47,6 +45,7 @@ class Search extends Component {
         <Form
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          value={this.state.term}
         />
         <Books books={this.state.books} handleBook={this.saveBook} save />
       </Fragment>
