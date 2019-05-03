@@ -5,9 +5,11 @@ import Flex from './Flex';
 import Title from './Title';
 import Buttons from './Buttons';
 import Details from './Details';
+import { buttons } from '../../../components/shared';
 
 const propTypes = {
   authors: PropTypes.string.isRequired,
+  buttons: PropTypes.object,
   description: PropTypes.string,
   id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
@@ -30,7 +32,13 @@ const BookLayout = ({
   <Section>
     <Flex>
       <Title authors={authors} title={title} />
-      <Buttons id={id} link={link} handleBook={handleBook} save={save} />
+      <Buttons
+        id={id}
+        link={link}
+        handleBook={handleBook}
+        save={save}
+        buttons={buttons}
+      />
     </Flex>
     <Details description={description} image={image} title={title} />
   </Section>

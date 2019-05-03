@@ -8,16 +8,22 @@ const propTypes = {
   id: PropTypes.number,
   link: PropTypes.string,
   handleBook: PropTypes.func,
-  save: PropTypes.bool
+  save: PropTypes.bool,
+  buttons: PropTypes.object
 };
 
-const Buttons = ({ id, link, handleBook, save }) => (
+const Buttons = ({ buttons, id, link, handleBook, save }) => (
   <ButtonContainer>
-    <Anchor href={link} target="_blank" rel="noopener noreferrer">
-      Visit
+    <Anchor
+      buttons={buttons}
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      VISIT
     </Anchor>
-    <Button save={save} data-index={id} onClick={handleBook}>
-      {save ? 'Save' : 'Delete'}
+    <Button buttons={buttons} save={save} data-index={id} onClick={handleBook}>
+      {save ? 'SAVE' : 'DELETE'}
     </Button>
   </ButtonContainer>
 );

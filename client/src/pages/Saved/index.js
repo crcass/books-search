@@ -25,7 +25,9 @@ class Saved extends Component {
   };
 
   render() {
-    return <Books books={this.state.books} handleBook={this.removeBook} />;
+    return (
+      <Books books={this.state.books} handleBook={this.removeBook} loaded />
+    );
   }
 }
 

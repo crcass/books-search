@@ -1,13 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Navbar from './Navbar';
 
-const Nav = () => (
+const Nav = ({ location }) => (
   <Navbar>
     <Link to="/">BRAND</Link>
-    <Link to="/">Search</Link>
-    <Link to="/saved">Saved</Link>
+    <Link className={location.pathname === '/' ? 'active' : null} to="/">
+      Search
+    </Link>
+    <Link
+      className={location.pathname === '/saved' ? 'active' : null}
+      to="/saved"
+    >
+      Saved
+    </Link>
   </Navbar>
 );
 
-export default Nav;
+export default withRouter(Nav);

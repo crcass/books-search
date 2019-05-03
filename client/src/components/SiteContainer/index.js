@@ -1,11 +1,18 @@
 import styled from 'styled-components';
+import { colors } from '../shared';
 
 const SiteContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  background: linear-gradient(
+    45deg,
+    ${colors.contrast},
+    ${colors.primary},
+    ${colors.contrast}
+  );
+  color: #333;
   font-family: 'Roboto', sans-serif;
-  justify-content: center;
+  height: 100%;
   margin-top: 48px;
+  overflow: scroll;
 `;
 
 export default SiteContainer;

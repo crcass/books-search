@@ -7,6 +7,7 @@ import BookLayout from './BookLayout';
 const propTypes = {
   books: PropTypes.array.isRequired,
   handleBook: PropTypes.func.isRequired,
+  loaded: PropTypes.bool,
   save: PropTypes.bool
 };
 
@@ -26,8 +27,8 @@ const renderBooks = (books, handleBook, save) =>
     </CSSTransition>
   ));
 
-const Books = ({ books, handleBook, save }) => (
-  <BooksContainer>
+const Books = ({ books, handleBook, loaded, save }) => (
+  <BooksContainer loaded={loaded}>
     <TransitionGroup className="tGroup">
       {renderBooks(books, handleBook, save)}
     </TransitionGroup>

@@ -1,14 +1,15 @@
 import styled from 'styled-components';
+import { colors } from '../shared';
 
 const BooksContainer = styled.div`
-  background-color: #aaa;
+  background-color: ${colors.background};
   border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: flex;
   flex-direction: column;
-  padding: 0 1em;
+  padding: ${({ loaded }) => (loaded ? '0 1em 1em' : 'none')};
   margin: 1em auto;
   max-width: 960px;
-  overflow: scroll;
 
   .tGroup {
     display: contents;

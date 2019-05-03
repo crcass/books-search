@@ -7,7 +7,8 @@ import { formatAPIResults } from '../../helpers';
 class Search extends Component {
   state = {
     term: '',
-    books: []
+    books: [],
+    loaded: false
   };
 
   handleChange = e => this.setState({ term: e.target.value.toLowerCase() });
@@ -26,7 +27,8 @@ class Search extends Component {
     try {
       const response = await getBooks(term);
       this.setState({
-        books: formatAPIResults(response.data.items)
+        books: formatAPIResults(response.data.items),
+        loaded: true
       });
     } catch (error) {
       throw error;
@@ -47,7 +49,12 @@ class Search extends Component {
           handleSubmit={this.handleSubmit}
           value={this.state.term}
         />
-        <Books books={this.state.books} handleBook={this.saveBook} save />
+        <Books
+          books={this.state.books}
+          handleBook={this.saveBook}
+          loaded={this.state.loaded}
+          save
+        />
       </Fragment>
     );
   }
