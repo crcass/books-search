@@ -1,5 +1,10 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { colors } from '../shared';
+
+const propTypes = {
+  loaded: PropTypes.bool.isRequired
+};
 
 const BooksContainer = styled.div`
   background-color: ${colors.background};
@@ -37,5 +42,7 @@ const BooksContainer = styled.div`
     transition: all 200ms ease-in;
   }
 `;
+
+BooksContainer.propTypes = propTypes;
 
 export default BooksContainer;

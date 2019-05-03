@@ -2,28 +2,20 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  alignItems: PropTypes.string,
-  anchorBackground: PropTypes.string,
-  borderRadius: PropTypes.string,
-  color: PropTypes.string,
-  display: PropTypes.string,
-  height: PropTypes.string,
-  justifyContent: PropTypes.string,
-  margin: PropTypes.string,
-  padding: PropTypes.string
+  buttons: PropTypes.object.isRequired
 };
 
 const Anchor = styled.a`
-  align-items: ${props => props.buttons.alignItems};
-  background: ${props => props.buttons.anchorBackground};
-  background-size: ${props => props.buttons.backgroundSize};
-  border-radius: ${props => props.buttons.borderRadius};
-  color: ${props => props.buttons.color};
-  display: ${props => props.buttons.display};
-  height: ${props => props.buttons.height};
-  justify-content: ${props => props.buttons.justifyContent};
-  margin: ${props => props.buttons.margin};
-  padding: ${props => props.buttons.padding};
+  align-items: ${({ buttons }) => buttons.alignItems};
+  background: ${({ buttons }) => buttons.anchorBackground};
+  background-size: ${({ buttons }) => buttons.backgroundSize};
+  border-radius: ${({ buttons }) => buttons.borderRadius};
+  color: ${({ buttons }) => buttons.color};
+  display: ${({ buttons }) => buttons.display};
+  height: ${({ buttons }) => buttons.height};
+  justify-content: ${({ buttons }) => buttons.justifyContent};
+  margin: ${({ buttons }) => buttons.margin};
+  padding: ${({ buttons }) => buttons.padding};
   text-decoration: none;
   transition: all 0.5s ease;
   width: 70px;

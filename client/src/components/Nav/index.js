@@ -4,7 +4,9 @@ import Navbar from './Navbar';
 
 const Nav = ({ location }) => (
   <Navbar>
-    <Link to="/">BRAND</Link>
+    <Link to="/">
+      <strong>GB Search</strong>
+    </Link>
     <Link className={location.pathname === '/' ? 'active' : null} to="/">
       Search
     </Link>

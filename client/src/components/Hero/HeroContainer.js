@@ -1,14 +1,16 @@
 import styled from 'styled-components';
+import books from './books.jpg';
 
 const HeroContainer = styled.div`
   align-items: center;
-  background: #e0e0e0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(${books});
   background-position: center;
   background-size: cover;
   color: #fff;
   display: flex;
   flex-direction: column;
-  height: 20em;
+  height: 24em;
   justify-content: center;
   width: 100%;
 
@@ -18,10 +20,6 @@ const HeroContainer = styled.div`
       font-size: 2.75em;
     }
   }
-
-  /* p {
-    max-width: 80%;
-  } */
 `;
 
 export default HeroContainer;

@@ -32,5 +32,8 @@ export const buttons = {
   padding: '0 15px',
   save: `linear-gradient(to right, ${colors.success}, ${colors.successDark}, ${
     colors.successDark
+  });`,
+  search: `linear-gradient(to right, ${colors.background}, ${colors.primary}, ${
+    colors.primary
   });`
 };

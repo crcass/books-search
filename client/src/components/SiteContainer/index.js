@@ -6,7 +6,7 @@ const SiteContainer = styled.div`
     45deg,
     ${colors.contrast},
     ${colors.primary},
-    ${colors.contrast}
+    ${colors.contrast} 75%
   );
   color: #333;
   font-family: 'Roboto', sans-serif;

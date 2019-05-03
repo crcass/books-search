@@ -2,31 +2,20 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  alignItems: PropTypes.string,
-  borderRadius: PropTypes.string,
-  color: PropTypes.string,
-  display: PropTypes.string,
-  height: PropTypes.string,
-  justifyContent: PropTypes.string,
-  margin: PropTypes.string,
-  padding: PropTypes.string,
-  save: PropTypes.bool
+  buttons: PropTypes.object.isRequired
 };
 
 const Button = styled.button`
-  align-items: ${props => props.buttons.alignItems};
   background: ${({ save, buttons }) =>
     save ? `${buttons.save}` : `${buttons.delete}`};
-  background-size: ${props => props.buttons.backgroundSize};
-  border: ${props => props.buttons.border};
-  border-radius: ${props => props.buttons.borderRadius};
-  color: ${props => props.buttons.color};
+  background-size: ${({ buttons }) => buttons.backgroundSize};
+  border: ${({ buttons }) => buttons.border};
+  border-radius: ${({ buttons }) => buttons.borderRadius};
+  color: ${({ buttons }) => buttons.color};
   cursor: pointer;
-  display: ${props => props.buttons.display};
-  height: ${props => props.buttons.height};
-  justify-content: ${props => props.buttons.justifyContent};
-  margin: ${props => props.buttons.margin};
-  padding: ${props => props.buttons.padding};
+  height: ${({ buttons }) => buttons.height};
+  margin: ${({ buttons }) => buttons.margin};
+  padding: ${({ buttons }) => buttons.padding};
   transition: all 0.6s ease;
   width: 100px;
 
