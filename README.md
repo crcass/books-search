@@ -9,3 +9,5 @@ This full-stack app allows users to search the Google Books API for content, sav
 ## Known Issues
 
 - Occasionally, CSS transitions fail to display properly the first time they are displayed.
+
+♥︎ cc
