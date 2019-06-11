@@ -20,10 +20,10 @@ class Search extends Component {
       return alert('Please enter a book title');
     }
     this.searchBooks(term);
-    this.setState({ term: '', books: [] });
+    this.setState({ term: '', books: [], loaded: false });
   };
 
-  async searchBooks(term) {
+  searchBooks = async term => {
     try {
       const response = await getBooks(term);
       this.setState({
@@ -33,7 +33,7 @@ class Search extends Component {
     } catch (error) {
       throw error;
     }
-  }
+  };
 
   saveBook = e => {
     const { index } = e.target.dataset;
