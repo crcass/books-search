@@ -1,5 +1,7 @@
 # Google Books Search
 
+![Google Books Search](/client/public/thumbnail.jpg)
+
 ## Technology
 
 This app was built with [MongoDB](https://www.mongodb.com/), [MongooseJS](https://mongoosejs.com/), [Express.js](https://expressjs.com/), [React](https://reactjs.org/), [Node.js](https://nodejs.org/en/), [React Router](https://reacttraining.com/react-router/), [Axios](https://www.npmjs.com/package/axios), & [styled-components](https://www.styled-components.com/)
